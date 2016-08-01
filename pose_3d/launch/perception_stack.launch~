@@ -1,0 +1,11 @@
+<launch>
+	<include file="$(find octomap_server)/launch/octomap_mapping.launch" />
+
+	<include file="$(find cmvision)/cmvision.launch">
+		<!-- <arg name="debug_on" value="false"/> -->
+	</include>
+
+	<node name="color_tracker" pkg="color_tracker" type="color_tracker" />
+
+	<node name="navigation_hub" pkg="modules" type="nav_hub" />
+</launch>
